@@ -52,7 +52,7 @@ server.tool(
     },
   },
   async ({ value, fromUnit }) => {
-    const toUnit = fromUnit === "kg" ? "lb" : "kg";
+    const toUnit: "kg" | "lb" = fromUnit === "kg" ? "lb" : "kg";
     const converted =
       fromUnit === "kg" ? value / KG_PER_LB : value * KG_PER_LB;
     const rounded = Math.round(converted * 100) / 100;
